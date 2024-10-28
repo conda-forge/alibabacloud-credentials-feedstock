@@ -1,5 +1,5 @@
 {% set name = "alibabacloud-credentials" %}
-{% set version = "0.3.5" %}
+{% set version = "0.3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/alibabacloud_credentials-{{ version }}.tar.gz
-  sha256: ad065ec95921eaf51939195485d0e5cc9e0ea050282059c7d8bf74bdb5496177
+  sha256: caa82cf258648dcbe1ca14aeba50ba21845567d6ac3cd48d318e0a445fff7f96
 
 build:
   noarch: python
