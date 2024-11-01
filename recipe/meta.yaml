@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/alibabacloud_credentials-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/alibabacloud_credentials-{{ version }}.tar.gz
   sha256: caa82cf258648dcbe1ca14aeba50ba21845567d6ac3cd48d318e0a445fff7f96
 
 build:
