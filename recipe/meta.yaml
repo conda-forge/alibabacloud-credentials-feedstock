@@ -1,18 +1,18 @@
 {% set name = "alibabacloud-credentials" %}
-{% set version = "0.3.6" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/alibabacloud_credentials-{{ version }}.tar.gz
-  sha256: caa82cf258648dcbe1ca14aeba50ba21845567d6ac3cd48d318e0a445fff7f96
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d2368eb70bd02db9143b2bf531a27a6fecd2cde9601db6e5b48cd6dbe25720ce
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -20,8 +20,11 @@ requirements:
     - pip
     - setuptools
   run:
+    - aiofiles >=22.1.0,<25.0.0
+    - alibabacloud_credentials_api >=1.0.0,<2.0.0
+    - apscheduler >=3.10.0,<4.0.0
     - python >={{ python_min }}
-    - alibabacloud-tea >=0.3.9
+    - alibabacloud-tea >=0.4.0
 
 test:
   imports:
