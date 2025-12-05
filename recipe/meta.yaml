@@ -20,7 +20,6 @@ requirements:
     - pip
     - setuptools
   run:
-    - alibabacloud-credentials-api <2.0.0,>=1.0.0
     - python >={{ python_min }}
     - alibabacloud-tea >=0.4.0
     - aiofiles >=22.1.0,<25.0.0
