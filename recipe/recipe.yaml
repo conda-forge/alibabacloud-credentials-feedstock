@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  name: alibabacloud-credentials
+  version: "1.0.7"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 80428280b4bcf95461d41d1490a22360b8b67d1829bf1eb38f74fabcc693f1b3
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - alibabacloud-tea >=0.4.0
+    - aiofiles >=22.1.0,<25.0.0
+    - alibabacloud_credentials_api >=1.0.0,<2.0.0
+    - apscheduler >=3.10.0,<4.0.0
+
+tests:
+  - python:
+      imports:
+        - alibabacloud_credentials
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: The alibabacloud credentials module of alibabaCloud Python SDK.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/aliyun/credentials-python
+
+extra:
+  recipe-maintainers:
+    - xylar
