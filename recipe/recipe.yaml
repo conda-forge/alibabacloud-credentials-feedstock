@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: alibabacloud-credentials
-  version: "1.0.7"
+  version: "1.0.8"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 80428280b4bcf95461d41d1490a22360b8b67d1829bf1eb38f74fabcc693f1b3
+  sha256: 364c22abef2d240b259ceadf1ce6800017f19a336729553956928a1edd12e769
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -33,13 +33,8 @@ tests:
   - python:
       imports:
         - alibabacloud_credentials
+      pip_check: true
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - pip check
 
 about:
   summary: The alibabacloud credentials module of alibabaCloud Python SDK.
