@@ -13,10 +13,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19841&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/alibabacloud-credentials-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/alibabacloud-credentials-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/alibabacloud-credentials-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
