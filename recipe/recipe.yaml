@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: alibabacloud-credentials
-  version: "1.0.9"
+  version: "1.0.10"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 11ad6206ce2bacc5b4ba5f2c7acfec93d70444dfe2e2c065c8017512e828019b
+  sha256: ae66c4374914862959cbf096839e40cadf8f44c6f18ea44a5a3f1e71da63c428
 
 build:
   number: 0
