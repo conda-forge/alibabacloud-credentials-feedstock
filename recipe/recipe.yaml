@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: alibabacloud-credentials
-  version: "1.0.11"
+  version: "1.0.12"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 11050e8996e3f1821bfb52aa6032ff9f0192798a772c07b7d34ab19a68a82cc0
+  sha256: 87da41ea3ffb146b44d999c62c160c2b96b0c30275ae35205bcdfe79ba0c4119
 
 build:
   number: 0
@@ -24,10 +24,10 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
-    - alibabacloud-tea >=0.4.0
-    - aiofiles >=22.1.0,<25.0.0
-    - alibabacloud_credentials_api >=1.0.0,<2.0.0
     - apscheduler >=3.10.0,<4.0.0
+    - aiofiles >=22.1.0,<25.0.0
+    - alibabacloud-tea >=0.4.0
+    - alibabacloud_credentials_api >=1.0.0,<2.0.0
 
 tests:
   - python:
